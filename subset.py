@@ -21,6 +21,7 @@ def Subset(backends, client_id, subset_size):
     # Group clients into rounds; each round uses the same shuffled list:
     round = client_id / subset_count
     random.seed(round)
+    backends.sort()
     random.shuffle(backends)
 
     # The subset id corresponding to the current client:
